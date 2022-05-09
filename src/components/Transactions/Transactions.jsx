@@ -1,4 +1,4 @@
-import React from 'react';
+import { Container } from 'components/Container';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -13,22 +13,24 @@ const Transactions = ({ items }) => {
     ));
 
   return (
-    <Wrapper>
-      <TableHead>
-        <Row>
-          <HeadCell>Type</HeadCell>
-          <HeadCell>Amount</HeadCell>
-          <HeadCell>Currency</HeadCell>
-        </Row>
-      </TableHead>
+    <Container>
+      <Wrapper>
+        <TableHead>
+          <Row>
+            <HeadCell>Type</HeadCell>
+            <HeadCell>Amount</HeadCell>
+            <HeadCell>Currency</HeadCell>
+          </Row>
+        </TableHead>
 
-      <tbody>{items && renderList()}</tbody>
-    </Wrapper>
+        <tbody>{items && renderList()}</tbody>
+      </Wrapper>
+    </Container>
   );
 };
 
 const Wrapper = styled.table`
-  width: 250px;
+  width: 100%;
 `;
 
 const TableHead = styled.thead`
@@ -40,11 +42,11 @@ const HeadCell = styled.th`
 `;
 
 const Row = styled.tr`
-  background-color: ${p => (p.accent ? '#CDDEFF' : 'transparent')};
+  background-color: ${p => (p.accent ? '#ECEEFF' : '#34343434')};
 `;
 
 const Cell = styled.td`
-  padding: 5px;
+  padding: 3px;
 
   &.capitalize {
     text-transform: capitalize;

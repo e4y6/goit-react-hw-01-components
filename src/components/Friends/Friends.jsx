@@ -1,4 +1,4 @@
-import React from 'react';
+import { Container } from 'components/Container';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -12,23 +12,26 @@ const Friends = ({ data }) => {
       </Item>
     ));
 
-  return <Wrapper>{data && renderList()}</Wrapper>;
+  return (
+    <Container>
+      <Wrapper>{data && renderList()}</Wrapper>
+    </Container>
+  );
 };
 
 const Wrapper = styled.ul`
-  display: block;
-  width: 250px;
-  background: #34343414;
+  width: 100%;
+  background-color: #34343434;
 `;
 
 const Item = styled.li`
   display: flex;
   align-items: center;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 7px;
+  margin-bottom: 4px;
   border: 1px solid #00eeff61;
-  border-radius: 2px;
-
+  border-radius: 4px;
+  background-color: #34343414;
   &:last-child {
     margin-bottom: 0;
   }
@@ -43,11 +46,11 @@ const OnlineLabel = styled.div`
 
 const Avatar = styled.img`
   width: 40px;
-  margin-left: 22%;
+  margin-left: 25%;
 `;
 
 const Title = styled.span`
-  margin-left: 21%;
+  margin-left: 25%;
 `;
 
 Friends.propTypes = {

@@ -1,6 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Container } from 'components/Container';
 
 const Statistics = ({ title, data }) => {
   const backgroundColors = [
@@ -19,22 +19,22 @@ const Statistics = ({ title, data }) => {
     ));
 
   return (
-    <Wrapper>
-      {title && <Title>{title}</Title>}
-      <StatList>{renderData()}</StatList>
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        {title && <Title>{title}</Title>}
+        <StatList>{renderData()}</StatList>
+      </Wrapper>
+    </Container>
   );
 };
 
 const Wrapper = styled.div`
-  display: block;
-  width: 250px;
   border: 1px solid #1ceeff41;
+  border-radius: 5px;
 `;
 
 const Title = styled.h2`
   width: 100%;
-  padding: 20px;
   text-align: center;
 `;
 

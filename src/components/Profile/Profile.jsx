@@ -1,40 +1,40 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
+import { Container } from 'components/Container';
 const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <Wrapper>
-      <Description>
-        <Avatar src={avatar} alt={username} />
-        <LineText>{username}</LineText>
-        <LineText className="subtitle">@{tag}</LineText>
-        <LineText className="subtitle">{location}</LineText>
-      </Description>
+    <Container>
+      <Wrapper>
+        <Description>
+          <Avatar src={avatar} alt={username} />
+          <LineText>{username}</LineText>
+          <LineText className="subtitle">@{tag}</LineText>
+          <LineText className="subtitle">{location}</LineText>
+        </Description>
 
-      <StatsList>
-        <StatsItem>
-          <Label>Followers</Label>
-          <Quantity>{stats.followers}</Quantity>
-        </StatsItem>
-        <StatsItem>
-          <Label>Views</Label>
-          <Quantity>{stats.views}</Quantity>
-        </StatsItem>
-        <StatsItem>
-          <Label>Likes</Label>
-          <Quantity>{stats.likes}</Quantity>
-        </StatsItem>
-      </StatsList>
-    </Wrapper>
+        <StatsList>
+          <StatsItem>
+            <Label>Followers</Label>
+            <Quantity>{stats.followers}</Quantity>
+          </StatsItem>
+          <StatsItem>
+            <Label>Views</Label>
+            <Quantity>{stats.views}</Quantity>
+          </StatsItem>
+          <StatsItem>
+            <Label>Likes</Label>
+            <Quantity>{stats.likes}</Quantity>
+          </StatsItem>
+        </StatsList>
+      </Wrapper>
+    </Container>
   );
 };
 
 const Wrapper = styled.div`
-  width: 250px;
   border-radius: 5px;
   border: 1px solid #1ceeff61;
-  background: #34343412;
+  background: #34343434;
 `;
 
 const Description = styled.div`
@@ -42,7 +42,7 @@ const Description = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 20px;
+
   border-bottom: none;
 `;
 
